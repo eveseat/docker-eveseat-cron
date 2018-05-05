@@ -21,5 +21,6 @@ COPY startup.sh /root/startup.sh
 RUN chmod +x /root/startup.sh
 
 VOLUME "/var/www/seat"
+WORKDIR /var/www/seat
 
 ENTRYPOINT ["/bin/sh", "/root/startup.sh"]
