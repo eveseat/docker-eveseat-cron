@@ -5,7 +5,7 @@ set -e
 while ! mysqladmin ping -hmariadb --silent; do
 
     echo "MariaDB container might not be ready yet... sleeping..."
-    sleep 3
+    sleep 10
 done
 
 /usr/sbin/crond -f -d 7
