@@ -8,4 +8,11 @@ while ! mysqladmin ping -hmariadb --silent; do
     sleep 10
 done
 
+# Ensure we have vendor/ ready.
+while [ ! -f /var/www/seat/vendor/autoload.php ]
+do
+    echo "SeAT code volume might not be ready yet... sleeping..."
+    sleep 10
+done
+
 /usr/sbin/crond -f -d 7
