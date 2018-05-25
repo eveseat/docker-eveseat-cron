@@ -10,7 +10,7 @@ RUN apk add --no-cache \
 # Add the SeAT crontab entry
 RUN touch crontab.tmp \
     && echo '* * * * * php /var/www/seat/artisan schedule:run' > crontab.tmp \
-    && crontab crontab.tmp \
+    && crontab -u www-data crontab.tmp \
     && rm -rf crontab.tmp
 
 # Skip migrations and assets publishing for this
