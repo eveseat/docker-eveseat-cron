@@ -1,4 +1,4 @@
-FROM php:7.1-alpine
+FROM php:7.3-alpine
 
 RUN apk add --no-cache \
     # Install OS level dependencies
